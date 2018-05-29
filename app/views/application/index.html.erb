@@ -1,0 +1,18 @@
+<head>
+<% if user_signed_in? %>
+    <div class="btnl">
+  <li><%= link_to current_user.email, user_path(current_user.id) %></li>
+    </div>
+
+<% end %>
+
+<% if user_signed_in? %>
+    <div class="btnl">
+  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: { confirm: "Do you want to log out?" } %></li>
+    </div>
+<% else %>
+    <div class="btnl">
+  <li><%= link_to "Log In", new_user_session_path %> </li>
+      </div>
+<% end %>
+</head>
